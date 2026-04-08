@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ 
+  <!-- A VR PPB Reactor reconstruction by Sofia Lopez - Jose L. Rubio - D. Puyol - URJC-->
+ 
+  <head>
+    ...
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  </head>
+
+  <body>
+    
+    <a-scene 
+      fog="type: exponential; color: #ffffff; density: 0"
+      renderer="colorManagement: true; physicallyCorrectLights: true">
+      
+    
+      
+      <!-- Environment -->
+
+      <a-sky src="assets/HDRI_Exterior.jpg" rotation="0 0 0"></a-sky>
+
+      
+      <!-- Light  -->
+        
+      <a-entity light="type: ambient; intensity: 3" color="#ffffff"></a-entity>
+      <a-entity light="type: directional; intensity: 0.8; castShadow: false" position="0 2.5 0"></a-entity>
+
+      
+
+     
+      <!-- Camera -->
+      <a-entity movement-controls="fly: false" position="-3 0 0">
+        <a-entity id="camera" camera position="0 1.6 0" look-controls></a-entity>
+        <a-entity cursor="rayOrigin:mouse"></a-entity>
+        <a-entity laser-controls="hand: right"></a-entity>
+      </a-entity>
+
+      <!-- Reference sphere-->
+       <a-sphere position="0 0 0" radius="0.2" color="#EF2D5E" visible="false"></a-sphere>
+      
+      
+        
+      
+      <!-- ********************************* -->
+      <!--        Interactividad       -->        
+      <!-- ********************************* -->
+      
+      
+
+      
+      <!--Imagen de fondo Purple Gain -->
+      
+      <a-box src="https://cdn.glitch.global/0d13447f-a502-45a9-8997-f3d16bc3f7c5/Final-VideosPurpleGain.png?v=1722521227378" depth="3.375" height="1.79" width="0.01" position="1.73 1.3 -7.4" rotation="0 90 0"
+             animation="property: opacity; to: 0; loop: false; startEvents: click; dur: 500"></a-box>
+      
+            
+       
+       
+      <!-- ********************************* -->
+      <!--        Carteles       -->        
+      <!-- ********************************* -->
+       
+  
+   
+      
+       
+       
+  <!-- Script for click and scale each item -->
+  <script>
+    AFRAME.registerComponent('scale-on-click', {
+      schema: {
+        scale: {type: 'vec3', default: {x: 6, y: 6, z: 6}}  // Valor de escala por defecto
+      },
+      init: function () {
+        var el = this.el;  // El elemento en el que se aplica el componente
+        el.addEventListener('click', function () {
+          // Cambiar la escala del elemento al hacer clic
+          el.setAttribute('scale', el.getAttribute('scale').x === 0.4 ? {x: 1, y: 1, z: 1} : {x: 0.4, y: 0.4, z: 0.4});
+        });
+      }
+    });
+
+    // Asignar el componente a cada elemento por separado
+    document.querySelector('#aaa').setAttribute('scale-on-click', '');
+    document.querySelector('#bbb').setAttribute('scale-on-click', '');
+    document.querySelector('#ccc').setAttribute('scale-on-click', '');
+    document.querySelector('#ddd').setAttribute('scale-on-click', '');
+
+  </script>
+      
+           
+      
+     
+
+      <!-- ********************************* -->
+      <!--        Assets Enviro       -->        
+      <!-- ********************************* -->
+      
+
+      
+      <!-- Reactor Blockout -->
+            
+      <a-assets>
+        <a-asset-item id="reactorblockout" src="ASSETS/TexturedTFM_32.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#reactorblockout" scale="1 1 1" position="0 0.1 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
+       
+
+               <!-- Valla -->
+            
+      <a-assets>
+        <a-asset-item id="valla" src="assets/Valla_REACT.glb"></a-asset-item>
+      </a-assets>
+   
+      <a-entity gltf-model="#valla" scale="1 1 1" position="0 0 0" material="repeat: 20 20"></a-entity>
+      
+      
+      <!-- Ground -->
+         
+      <a-assets>
+        <a-asset-item id="ground" src="assets/Suelo_Claro_v2.png"></a-asset-item>
+      </a-assets>
+      
+      <a-image src="#ground" height="75" width="75" rotation="-90 90 0" repeat="29 29" roughness= "0.8" shader= "flat"></a-image>
+      
+ 
+
+    </a-scene>
+  </body>
+
+</html>
