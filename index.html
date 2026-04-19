@@ -22,19 +22,18 @@
       
       <!-- Environment -->
 
-      <a-sky src="assets/HDRI_Exterior.jpg" rotation="0 0 0"></a-sky>
+      <a-sky src="ASSETS/HDRI_qwantani_dusk_2_puresky.jpg" rotation="0 0 0"></a-sky>
 
       
       <!-- Light  -->
         
-      <a-entity light="type: ambient; intensity: 3" color="#ffffff"></a-entity>
+      <a-entity light="type: ambient; intensity: 2.5" color="#ffffff"></a-entity>
       <a-entity light="type: directional; intensity: 0.8; castShadow: false" position="0 2.5 0"></a-entity>
-
       
 
      
       <!-- Camera -->
-      <a-entity movement-controls="fly: false" position="-3 0 0">
+      <a-entity movement-controls="fly: false" position="0 0 0">
         <a-entity id="camera" camera position="0 1.6 0" look-controls></a-entity>
         <a-entity cursor="rayOrigin:mouse"></a-entity>
         <a-entity laser-controls="hand: right"></a-entity>
@@ -46,19 +45,6 @@
       
         
       
-      <!-- ********************************* -->
-      <!--        Interactividad       -->        
-      <!-- ********************************* -->
-      
-      
-
-      
-      <!--Imagen de fondo Purple Gain -->
-      
-      <a-box src="https://cdn.glitch.global/0d13447f-a502-45a9-8997-f3d16bc3f7c5/Final-VideosPurpleGain.png?v=1722521227378" depth="3.375" height="1.79" width="0.01" position="1.73 1.3 -7.4" rotation="0 90 0"
-             animation="property: opacity; to: 0; loop: false; startEvents: click; dur: 500"></a-box>
-      
-            
        
        
       <!-- ********************************* -->
@@ -66,9 +52,6 @@
       <!-- ********************************* -->
        
   
-   
-      
-       
        
   <!-- Script for click and scale each item -->
   <script>
@@ -103,11 +86,11 @@
       
 
       
-      <!-- Reactor Blockout -->
+      <!-- Blockout -->
             
     
       <a-assets>
-        <a-asset-item id="reactorblockout" src="ASSETS/TexturedTFM_32.glb"></a-asset-item>
+        <a-asset-item id="reactorblockout" src="ASSETS/Blockout_MEI.glb"></a-asset-item>
       </a-assets>
    
 
@@ -126,10 +109,10 @@
       <!-- Ground -->
          
       <a-assets>
-        <a-asset-item id="ground" src="assets/Suelo_Claro_v2.png"></a-asset-item>
+        <a-asset-item id="ground" src="ASSETS/concrete_floor_worn_001_diff_4k.png"></a-asset-item>
       </a-assets>
       
-      <a-image src="#ground" height="75" width="75" rotation="-90 90 0" repeat="29 29" roughness= "0.8" shader= "flat"></a-image>
+      <a-image src="#ground" height="60" width="60" rotation="-90 90 0" repeat="50 50" roughness= "0.8" shader= "flat"></a-image>
       
  
 
