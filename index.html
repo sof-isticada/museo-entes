@@ -15,20 +15,20 @@
   <body>
     
     <a-scene 
-      fog="type: exponential; color: #ffffff; density: 0"
+      fog="type: exponential; color: #ffe4c9; density: 0"
       renderer="colorManagement: true; physicallyCorrectLights: true">
       
     
       
       <!-- Environment -->
 
-      <a-sky src="ASSETS/HDRI_qwantani_dusk_2_puresky.jpg" rotation="0 0 0"></a-sky>
+      <a-sky src="ASSETS/HDRI_MEI.png" rotation="0 0 0"></a-sky>
 
       
       <!-- Light  -->
         
-      <a-entity light="type: ambient; intensity: 2.5" color="#ffffff"></a-entity>
-      <a-entity light="type: directional; intensity: 0.8; castShadow: false" position="0 2.5 0"></a-entity>
+      <a-entity light="type: ambient; intensity: 2.5" color="#ffe4c9"></a-entity>
+      <a-entity light="type: directional; intensity: 1.75; castShadow: true" position="0 2.5 0" color="#ffe4c9"></a-entity>
       
 
      
@@ -94,18 +94,29 @@
       </a-assets>
    
 
-      <a-entity gltf-model="#reactorblockout" scale="1 1 1" position="0 0.1 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
+      <a-entity gltf-model="#reactorblockout" scale="1 1 1" position="0 0.01 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
        
 
-               <!-- Valla -->
+     <!-- Obras -->
             
+    
       <a-assets>
-        <a-asset-item id="valla" src="assets/Valla_REACT.glb"></a-asset-item>
+        <a-asset-item id="peana01" src="ASSETS/Peana_MEI.glb"></a-asset-item>
       </a-assets>
    
-      <a-entity gltf-model="#valla" scale="1 1 1" position="0 0 0" material="repeat: 20 20"></a-entity>
-      
-      
+
+      <a-entity gltf-model="#peana01" scale="1 1 1" position="0 0.01 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
+       
+
+      <a-assets>
+        <a-asset-item id="escultura01_ECO" src="ASSETS/Escultura01_Eco_MEI.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#escultura01_ECO" scale="1 1 1" position="0 0.2 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
+       
+
+
       <!-- Ground -->
          
       <a-assets>
