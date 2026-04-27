@@ -15,8 +15,8 @@
   <body>
     
     <a-scene 
-      fog="type: exponential; color: #ffe4c9; density: 0"
-      renderer="colorManagement: true; physicallyCorrectLights: true">
+      fog="type: exponential; color: #f4f2ec; density: 0.00015"
+      renderer="colorManagement: true; physicallyCorrectLights: true; exposure: 1.2">
       
     
       
@@ -27,14 +27,37 @@
       
       <!-- Light  -->
         
-      <a-entity light="type: ambient; intensity: 2.5" color="#ffe4c9"></a-entity>
-      <a-entity light="type: directional; intensity: 1.75; castShadow: true" position="0 2.5 0" color="#ffe4c9"></a-entity>
+      <a-entity light="type: ambient; intensity: 1.25" color="#ffe4c9"></a-entity>
+      <a-entity light="type: directional; intensity: 1.2; castShadow: true" position="0 3 0" color="#ffe4c9"></a-entity>
       
+<a-light type="ambient" color="#ffffff" intensity="0.55"></a-light>
 
+<a-light 
+  type="directional" 
+  position="2 8 4" 
+  intensity="1.75" 
+  color="#FFEBD1">
+</a-light>
+
+<a-light 
+  type="point" 
+  position="0 3 0"
+  intensity="1.95"
+  color="#fff0d0"
+  distance="6">
+</a-light>
+
+<a-light 
+  type="point" 
+  position="0 0 0"
+  intensity="1.95"
+  color="#fff0d0"
+  distance="70">
+</a-light>
      
       <!-- Camera -->
       <a-entity movement-controls="fly: false" position="0 0 0">
-        <a-entity id="camera" camera position="0 1.6 0" look-controls></a-entity>
+        <a-entity id="camera" camera position="0 1.6 2" look-controls></a-entity>
         <a-entity cursor="rayOrigin:mouse"></a-entity>
         <a-entity laser-controls="hand: right"></a-entity>
       </a-entity>
@@ -85,6 +108,7 @@
       <!-- ********************************* -->
       
 
+
       
       <!-- Blockout -->
             
@@ -94,10 +118,22 @@
       </a-assets>
    
 
-      <a-entity gltf-model="#reactorblockout" scale="1 1 1" position="0 0.01 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
+      <a-entity gltf-model="#reactorblockout" scale="1 1 1" position="0 0.01 0"  emissive="#000000" emissiveIntensity="1"></a-entity>
        
+      
+      
+      <a-torus position="0 5 -0.7" rotation="90 0 0" radius="9.5" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+      <a-torus position="0 5.3 -2" rotation="90 0 0" radius="7.5" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+      <a-torus position="-0.75 5.9 -0.9" rotation="90 0 0" radius="6.5" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
 
-     <!-- Obras -->
+
+      <a-torus position="-1.2 -1.9 -8.55" rotation="-16 9 0" radius="5.5" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+      <a-torus position="-1.15 -2.12 -8.3" rotation="-16 9 0" radius="5.9" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+
+
+
+
+     <!-- Peana obra y luz 01-->
             
     
       <a-assets>
@@ -105,7 +141,7 @@
       </a-assets>
    
 
-      <a-entity gltf-model="#peana01" scale="1 1 1" position="0 0.01 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
+      <a-entity gltf-model="#peana01" scale="1 1 1" position="0 0.01 0" emissive="#ffffff" emissiveIntensity="1"></a-entity>
        
 
       <a-assets>
@@ -113,8 +149,44 @@
       </a-assets>
    
 
-      <a-entity gltf-model="#escultura01_ECO" scale="1 1 1" position="0 0.2 0" animation-mixer="clip: *; loop: repeat; repetitions: Infinity; timeScale: 1"></a-entity>
+      <a-entity gltf-model="#escultura01_ECO" scale="1 1 1" position="0 0 0" emissive="#000000" emissiveIntensity="1"></a-entity>
        
+      <a-light type="point" position="0 0 0" intensity="1.5" color="#fff0d0" distance="7">
+      </a-light>
+
+      <a-torus position="0 0.042 0" rotation="90 0 0" radius="0.74" radius-tubular="0.007" material="color: #FFEBD1"> </a-torus>
+
+      <a-torus position="0 0 0" rotation="90 0 0" radius="1" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+
+
+   <!-- Peana obra y luz 02-->
+            
+    
+      <a-assets>
+        <a-asset-item id="peana02" src="ASSETS/Peana_MEI.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#peana02" scale="1 1 1" position="-3 0.01 -3" emissive="#ffffff" emissiveIntensity="1"></a-entity>
+       
+
+      <a-assets>
+        <a-asset-item id="escultura02" src="ASSETS/Escultura02_MEI.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#escultura02" scale="1 1 1" position="-3 0.01 -3" emissive="#000000" emissiveIntensity="1"></a-entity>
+       
+      <a-light type="point" position="-3 0.01 -3" intensity="1.5" color="#fff0d0" distance="7">
+      </a-light>
+
+      <a-torus position="-3 0.042 -3" rotation="90 0 0" radius="0.74" radius-tubular="0.007" material="color: #FFEBD1"> </a-torus>
+
+      <a-torus position="-3 0 -3" rotation="90 0 0" radius="0.9" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+
+
+
+
 
 
       <!-- Ground -->
@@ -123,9 +195,12 @@
         <a-asset-item id="ground" src="ASSETS/concrete_floor_worn_001_diff_4k.png"></a-asset-item>
       </a-assets>
       
-      <a-image src="#ground" height="60" width="60" rotation="-90 90 0" repeat="50 50" roughness= "0.8" shader= "flat"></a-image>
+      <a-image src="#ground" height="60" width="60" rotation="-90 90 0" repeat="50 50" shader= "flat" material="color: #E6E3E3; roughness: 0.18; metalness: 0.05"></a-image>
       
  
+
+
+
 
     </a-scene>
   </body>
