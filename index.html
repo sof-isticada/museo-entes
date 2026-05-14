@@ -27,8 +27,8 @@
       
       <!-- Light  -->
         
-      <a-entity light="type: ambient; intensity: 1.75" color="#D6DDFF"></a-entity>
-      <a-entity light="type: directional; intensity: 1; castShadow: true" position="0 3 0" color="#FFF8E8"></a-entity>
+      <a-entity light="type: ambient; intensity: 2.25" color="#D6DDFF"></a-entity>
+      <a-entity light="type: directional; intensity: 1.2; castShadow: true" position="0 3 0" color="#FFF8E8"></a-entity>
       
 
 <a-light 
@@ -129,7 +129,7 @@
             
     
       <a-assets>
-        <a-asset-item id="Domo" src="ASSETS/Dome_MEI.glb"></a-asset-item>
+        <a-asset-item id="Domo" src="ASSETS/Dome_v2_MEI.glb"></a-asset-item>
       </a-assets>
    
 
@@ -151,11 +151,11 @@
        
 
       <a-assets>
-        <a-asset-item id="escultura01_ECO" src="ASSETS/Escultura01_Eco_MEI.glb"></a-asset-item>
+        <a-asset-item id="escultura01_ECO" src="ASSETS/Escultura06_Lucia_MEI.glb"></a-asset-item>
       </a-assets>
    
 
-      <a-entity gltf-model="#escultura01_ECO" scale="1 1 1" position="0 0 0" emissive="#000000" emissiveIntensity="1"></a-entity>
+      <a-entity gltf-model="#escultura01_ECO" scale="0.01 0.01 0.01" position="0 0 0" emissive="#000000" emissiveIntensity="1"></a-entity>
        
       <a-light type="point" position="0 0 0" intensity="1.5" color="#F0DEB4" distance="7">
       </a-light>
@@ -177,11 +177,11 @@
        
 
       <a-assets>
-        <a-asset-item id="escultura02" src="ASSETS/Escultura02_MEI.glb"></a-asset-item>
+        <a-asset-item id="escultura02" src="ASSETS/Escultura04_Moli_MEI.glb"></a-asset-item>
       </a-assets>
    
 
-      <a-entity gltf-model="#escultura02" scale="1 1 1" position="-3 0.01 -3" emissive="#000000" emissiveIntensity="1"></a-entity>
+      <a-entity gltf-model="#escultura02" rotation="0 -30 0" scale="1 1 1" position="6 0.01 -6" emissive="#000000" emissiveIntensity="1"></a-entity>
        
       <a-light type="point" position="-3 0.01 -3" intensity="1.5" color="#F0DEB4" distance="7">
       </a-light>
@@ -209,7 +209,7 @@
       </a-assets>
    
 
-      <a-entity gltf-model="#escultura03" scale="1 1 1" position="-3 0.01 3" emissive="#000000" emissiveIntensity="1"></a-entity>
+      <a-entity gltf-model="#escultura03" rotation="0 15 0" scale="1 1 1" position="-3 0.01 3" emissive="#000000" emissiveIntensity="1"></a-entity>
        
       <a-light type="point" position="-3 0.01 3" intensity="1.5" color="#F0DEB4" distance="7">
       </a-light>
@@ -232,11 +232,11 @@
        
 
       <a-assets>
-        <a-asset-item id="escultura04" src="ASSETS/Escultura04_Moli_MEI.glb"></a-asset-item>
+        <a-asset-item id="escultura04" src="ASSETS/Escultura02_MEI.glb"></a-asset-item>
       </a-assets>
    
 
-      <a-entity gltf-model="#escultura04" scale="1 1 1" position="3 0.01 3" emissive="#000000" emissiveIntensity="1"></a-entity>
+      <a-entity gltf-model="#escultura04" rotation="0 -15 0" scale="1 1 1" position="3 0.01 3" emissive="#000000" emissiveIntensity="1"></a-entity>
        
       <a-light type="point" position="3 0.01 3" intensity="1.5" color="#F0DEB4" distance="7">
       </a-light>
@@ -263,7 +263,7 @@
       </a-assets>
    
 
-      <a-entity gltf-model="#escultura05" scale="1 1 1" position="3 0.21 -3" emissive="#000000" emissiveIntensity="1"></a-entity>
+      <a-entity gltf-model="#escultura05" rotation="0 30 0" scale="1 1 1" position="3 0.21 -3" emissive="#000000" emissiveIntensity="1"></a-entity>
        
       <a-light type="point" position="3 0.01 -3" intensity="1.5" color="#F0DEB4" distance="7">
       </a-light>
@@ -287,17 +287,74 @@
        
 
       <a-assets>
-        <a-asset-item id="escultura06" src="ASSETS/Escultura06_Lucia_MEI.glb"></a-asset-item>
+        <a-asset-item id="escultura06" src="ASSETS/Escultura01_Eco_MEI.glb"></a-asset-item>
       </a-assets>
    
 
-      <a-entity gltf-model="#escultura06" scale="0.01 0.01 0.01" position="6 0.21 0" emissive="#000000" emissiveIntensity="1"></a-entity>
+      <a-entity gltf-model="#escultura06" scale="1 1 1" position="6 0.21 0" emissive="#000000" emissiveIntensity="1"></a-entity>
        
       <a-light type="point" position="6 0.01 0" intensity="1.5" color="#F0DEB4" distance="7">
       </a-light>
 
       
       <a-torus position="6 0.0 0" rotation="90 0 0" radius="0.9" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+
+
+
+
+
+   <!-- Peana obra y luz 07-->
+            
+    
+      <a-assets>
+        <a-asset-item id="peana07" src="ASSETS/Peana_v2_MEI.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#peana07" scale="1 1 1" position="-6 0.01 0" emissive="#ffffff" emissiveIntensity="1"></a-entity>
+       
+
+      <a-assets>
+        <a-asset-item id="escultura07" src="ASSETS/Escultura07_v2_Leydi_MEI.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#escultura07" scale="1 1 1" position="-6 0.0121 0" emissive="#000000" emissiveIntensity="1"></a-entity>
+       
+      <a-light type="point" position="-6 0.01 0" intensity="1.5" color="#F0DEB4" distance="7">
+      </a-light>
+
+      
+      <a-torus position="-6 0.0 0" rotation="90 0 0" radius="0.9" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+
+
+
+
+
+   <!-- Peana obra y luz 08-->
+            
+    
+      <a-assets>
+        <a-asset-item id="peana08" src="ASSETS/Peana_v2_MEI.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#peana08" scale="1 1 1" position="6 0.01 -6" emissive="#ffffff" emissiveIntensity="1"></a-entity>
+       
+
+      <a-assets>
+        <a-asset-item id="escultura08" src="ASSETS/Escultura08_Anahi_MEI.glb"></a-asset-item>
+      </a-assets>
+   
+
+      <a-entity gltf-model="#escultura08" rotation="0 -120 0" scale="2.2 2.2 2.2" position="-3 1.31 -3" emissive="#000000" emissiveIntensity="1"></a-entity>
+       
+      <a-light type="point" position="6 0.01 -6" intensity="1.5" color="#F0DEB4" distance="7">
+      </a-light>
+
+      
+      <a-torus position="6 0.0 -6" rotation="90 0 0" radius="0.9" radius-tubular="0.007" material="color: #dddddd"> </a-torus>
+
 
 
 
