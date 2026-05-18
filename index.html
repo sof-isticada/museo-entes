@@ -10,6 +10,31 @@
     <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script>
+     AFRAME.registerComponent('toggle-panel', {
+        schema: {
+         target: { type: 'selector' },
+          group: { type: 'string', default: '.info-panel' }
+       },
+
+        init: function () {
+         this.el.addEventListener('click', () => {
+            const targetPanel = this.data.target;
+           const allPanels = document.querySelectorAll(this.data.group);
+           const wasVisible = targetPanel.getAttribute('visible');
+
+        // Cierra todos los carteles
+        allPanels.forEach(panel => {
+          panel.setAttribute('visible', false);
+           });
+
+        // Abre o cierra el cartel pulsado
+         targetPanel.setAttribute('visible', !wasVisible);
+           });
+         }
+       });
+    </script>
+  
   </head>
 
   <body>
@@ -89,32 +114,199 @@
       <!--        Carteles       -->        
       <!-- ********************************* -->
        
-  
+
+    <!-- 01 - LUCIA -->      
        
-  <!-- Script for click and scale each item -->
-  <script>
-    AFRAME.registerComponent('scale-on-click', {
-      schema: {
-        scale: {type: 'vec3', default: {x: 6, y: 6, z: 6}}  // Valor de escala por defecto
-      },
-      init: function () {
-        var el = this.el;  // El elemento en el que se aplica el componente
-        el.addEventListener('click', function () {
-          // Cambiar la escala del elemento al hacer clic
-          el.setAttribute('scale', el.getAttribute('scale').x === 0.4 ? {x: 1, y: 1, z: 1} : {x: 0.4, y: 0.4, z: 0.4});
-        });
-      }
-    });
+        <!-- BOTÓN 01 -->
+        <a-entity id="boton-cartel-01" class="clickable" position="0.75 0.9 0.75" rotation="0 0 0" toggle-panel="target: #cartel-01">
 
-    // Asignar el componente a cada elemento por separado
-    document.querySelector('#aaa').setAttribute('scale-on-click', '');
-    document.querySelector('#bbb').setAttribute('scale-on-click', '');
-    document.querySelector('#ccc').setAttribute('scale-on-click', '');
-    document.querySelector('#ddd').setAttribute('scale-on-click', '');
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
 
-  </script>
-      
-           
+        </a-entity>
+
+
+        <!-- CARTEL 01 -->
+        <a-entity id="cartel-01" class="info-panel" visible="false" position="0.75 1.5 0.75" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+        </a-entity>
+
+
+    <!-- 02 - DAVID MOLINA -->     
+
+        <!-- BOTÓN 02 -->
+        <a-entity id="boton-cartel-02" class="clickable" position="6.75 0.9 -5.25" rotation="0 0 0" toggle-panel="target: #cartel-02">
+
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
+
+        </a-entity>
+
+
+        <!-- CARTEL 02 -->
+        <a-entity id="cartel-02" class="info-panel" visible="false" position="6.75 1.5 -5.25" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+        </a-entity>
+
+
+
+    <!-- 03 - CARLOS -->     
+
+        <!-- BOTÓN 03 -->
+        <a-entity id="boton-cartel-03" class="clickable" position="-2.25 0.9 3.75" rotation="0 0 0" toggle-panel="target: #cartel-03">
+
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
+
+        </a-entity>
+
+
+        <!-- CARTEL 03 -->
+        <a-entity id="cartel-03" class="info-panel" visible="false" position="-2.25 1.5 3.75" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+        </a-entity>
+
+
+     <!-- 04 - DENITSA -->     
+
+        <!-- BOTÓN 04 -->
+        <a-entity id="boton-cartel-04" class="clickable" position="3.75 0.9 3.75" rotation="0 0 0" toggle-panel="target: #cartel-04">
+
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
+
+        </a-entity>
+
+
+        <!-- CARTEL 04 -->
+        <a-entity id="cartel-04" class="info-panel" visible="false" position="3.75 1.5 3.75" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+        </a-entity>
+
+
+
+    <!-- 05 - SOF -->     
+
+        <!-- BOTÓN 05 -->
+        <a-entity id="boton-cartel-05" class="clickable" position="3.75 0.9 -2.25" rotation="0 0 0" toggle-panel="target: #cartel-05">
+
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
+
+        </a-entity>
+
+
+        <!-- CARTEL 05 -->
+        <a-entity id="cartel-05" class="info-panel" visible="false" position="3.75 1.5 -2.25" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+        </a-entity>
+
+
+   <!-- 06 - SONIA - ECO -->     
+
+        <!-- BOTÓN 06 -->
+        <a-entity id="boton-cartel-06" class="clickable" position="6.75 0.9 0.75" rotation="0 0 0" toggle-panel="target: #cartel-06">
+
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
+
+        </a-entity>
+
+
+        <!-- CARTEL 06 -->
+        <a-entity id="cartel-06" class="info-panel" visible="false" position="6.75 1.5 0.75" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+
+    <!-- 07 - LETDI - ERROR AGUA -->     
+
+        </a-entity>
+
+       <!-- BOTÓN 07 -->
+        <a-entity id="boton-cartel-07" class="clickable" position="-5.25 0.9 0.75" rotation="0 0 0" toggle-panel="target: #cartel-07">
+
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
+
+        </a-entity>
+
+
+        <!-- CARTEL 07 -->
+        <a-entity id="cartel-07" class="info-panel" visible="false" position="-5.25 1.5 0.75" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+        </a-entity>
+
+
+    <!-- 08 - ANAHI - AJOLOTLA -->     
+
+        <!-- BOTÓN 08 -->
+        <a-entity id="boton-cartel-08" class="clickable" position="-2.25 0.9 -2.25" rotation="0 0 0" toggle-panel="target: #cartel-08">
+
+           <a-plane width="0.55" height="0.2" color="#F4F2EC" opacity="0.95" material="shader: flat"></a-plane>
+           <a-text value="Info" align="center" color="#222222" width="2.2" position="0 0 0.01"></a-text>
+
+        </a-entity>
+
+
+        <!-- CARTEL 08 -->
+        <a-entity id="cartel-08" class="info-panel" visible="false" position="-2.25 1.5 -2.25" rotation="0 0 0">
+
+          <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
+
+          <a-text
+            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+          </a-text>
+
+        </a-entity>
       
      
 
@@ -125,7 +317,7 @@
 
 
       
-      <!-- Blockout -->
+      <!-- Entorno -->
             
     
       <a-assets>
@@ -139,7 +331,7 @@
     
 
 
-     <!-- Peana obra y luz 01-->
+     <!-- Peana obra y luz 01 - LUCIA - _______ -->
             
     
       <a-assets>
@@ -165,7 +357,7 @@
 
 
 
-   <!-- Peana obra y luz 02-->
+   <!-- Peana obra y luz 02 - DAVID MOLINA - MOLI-->
             
     
       <a-assets>
@@ -193,7 +385,7 @@
 
 
       
-   <!-- Peana obra y luz 03-->
+   <!-- Peana obra y luz 03 - CARLOS - Carminha Cae-->
             
     
       <a-assets>
@@ -220,7 +412,7 @@
 
 
 
-       <!-- Peana obra y luz 04-->
+       <!-- Peana obra y luz 04 - DENITSA - LILY-->
             
     
       <a-assets>
@@ -247,7 +439,7 @@
 
 
 
-       <!-- Peana obra y luz 05-->
+       <!-- Peana obra y luz 05 - SOF - _______ -->
             
     
       <a-assets>
@@ -275,7 +467,7 @@
 
 
 
-       <!-- Peana obra y luz 06-->
+       <!-- Peana obra y luz 06 - SONIA - ECO -->
             
     
       <a-assets>
@@ -303,7 +495,7 @@
 
 
 
-   <!-- Peana obra y luz 07-->
+   <!-- Peana obra y luz 07 - LEYDI - El Error del Agua -->
             
     
       <a-assets>
@@ -331,7 +523,7 @@
 
 
 
-   <!-- Peana obra y luz 08-->
+   <!-- Peana obra y luz 08 - ANAHI - Ajolotla, la flor del agua-->
             
     
       <a-assets>
