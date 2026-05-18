@@ -2,7 +2,7 @@
 <html lang="en">
 
  
-  <!-- A VR PPB Reactor reconstruction by Sofia Lopez - Jose L. Rubio - D. Puyol - URJC-->
+  <!-- A Museum developed by Sofóa López Soto and José Luis Rubio-Tamayo-->
  
   <head>
     ...
@@ -35,6 +35,9 @@
        });
     </script>
   
+    <!-- Para entender el alfabeto español-->
+    <meta charset="UTF-8">
+
   </head>
 
   <body>
@@ -55,52 +58,22 @@
       <a-entity light="type: ambient; intensity: 2.25" color="#D6DDFF"></a-entity>
       <a-entity light="type: directional; intensity: 1.2; castShadow: true" position="0 3 0" color="#FFF8E8"></a-entity>
       
-
-<a-light 
-  type="directional" 
-  position="4 8 4" 
-  intensity="1" 
-  color="#FFF8E8">
-</a-light>
-
-<a-light 
-  type="directional" 
-  position="-4 8 4" 
-  intensity="0.8" 
-  color="#D6EFFF">
-</a-light>
-
-<a-light 
-  type="directional" 
-  position="-4 8 -4" 
-  intensity="1" 
-  color="#FFF8E8">
-</a-light>
-
-<a-light 
-  type="directional" 
-  position="-4 0 -4" 
-  intensity="1" 
-  color="#FFF8E8">
-</a-light>
-
-<a-light 
-  type="directional" 
-  position="4 8 -4" 
-  intensity="0.8" 
-  color="#D6EFFF">
-</a-light>
-
-
+      <a-light type="directional" position="4 8 4" intensity="1" color="#FFF8E8"></a-light>
+      <a-light type="directional" position="-4 8 4" intensity="0.8" color="#D6EFFF"></a-light>
+      <a-light type="directional" position="-4 8 -4" intensity="1" color="#FFF8E8"></a-light>
+      <a-light type="directional" position="-4 0 -4" intensity="1" color="#FFF8E8"></a-light>
+      <a-light type="directional" position="4 8 -4" intensity="0.8" color="#D6EFFF"></a-light>
 
 
      
       <!-- Camera -->
       <a-entity movement-controls="fly: false" position="0 0 0">
-        <a-entity id="camera" camera position="0 1.6 2" look-controls></a-entity>
+        <a-entity id="camera" camera position="0 1.6 3" look-controls></a-entity>
         <a-entity cursor="rayOrigin:mouse"></a-entity>
         <a-entity laser-controls="hand: right"></a-entity>
       </a-entity>
+
+
 
       <!-- Reference sphere-->
        <a-sphere position="0 0 0" radius="0.2" color="#EF2D5E" visible="false"></a-sphere>
@@ -108,7 +81,6 @@
       
         
       
-       
        
       <!-- ********************************* -->
       <!--        Carteles       -->        
@@ -132,7 +104,9 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            value="Obra 01\n\n__________________________________
+            
+            - Lucia Granado Gutierrez -"
             align="center" color="#222222" width="2.1" position="0 0.05 0.01">
           </a-text>
 
@@ -156,7 +130,9 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            value="Moli\n\n__________________________________
+            
+            - David Molina Perez -"
             align="center" color="#222222" width="2.1" position="0 0.05 0.01">
           </a-text>
 
@@ -181,7 +157,11 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            value="Carminha Cae\n\nNo cae: decide soltarse.
+            El cuerpo, recogido en la esfera, no resiste.
+            Hay una calma extrana en la caida, como si el vacio fuese eleccion.
+
+            - Carlos Vargas -"
             align="center" color="#222222" width="2.1" position="0 0.05 0.01">
           </a-text>
 
@@ -205,7 +185,10 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            value="Lily\n\nLily es un espiritu del agua que vive en estanques silenciosos.
+            Aunque es timida, tiene un lado jugueton que aparece cuando la luz del sol toca el agua, haciendola moverse como si bailara con las olas.
+            
+            - Denitsa Gaberska -"
             align="center" color="#222222" width="2.1" position="0 0.05 0.01">
           </a-text>
 
@@ -230,7 +213,9 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            value="_____________\n\n__________________________________
+            
+            - Sofia Lopez -"
             align="center" color="#222222" width="2.1" position="0 0.05 0.01">
           </a-text>
 
@@ -254,8 +239,12 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
-            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+            value="ECO\n\nEco es un personaje con varias bocas repartidas por el cuerpo. El problema es que ninguna dice nada suyo, solo repite frases que ha escuchado a otros, conversaciones ajenas.
+            Es el mas gracioso sin querer, porque siempre suelta lo que no debe. Pero tambien es de los mas tristes, porque debajo de todo ese ruido no hay voz propia.
+            Solo cuando consigue callarse del todo empieza a aparecer algo que podria ser el.
+
+            - Sonia Rodriguez Revuelta -"
+            align="center" color="#222222" width="2.9" position="0 0.05 0.01" scale="0.55 0.55 0.55">
           </a-text>
 
 
@@ -278,8 +267,11 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 01\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
-            align="center" color="#222222" width="2.1" position="0 0.05 0.01">
+            value="El Error del Agua\n\nNacio en un lugar donde el mar nunca estaba quieto. No tenia nombre, rostro fijo ni forma estable. Cada vez que intentaba verse como los demas entes del oceano, su cuerpo cambiaba: una mano se derretia en gotas, su cabeza se deformaba como una ola y sus ojos aparecian en lugares distintos.
+            Por eso lo llamaron El Error del Agua
+            
+            - Leydi Marlen Hernandez Cortes -"
+            align="center" color="#222222" width="2.1" position="0 0.05 0.01" scale="0.85 0.85 0.85">
           </a-text>
 
         </a-entity>
@@ -302,7 +294,9 @@
           <a-plane width="2.4" height="1.15" color="#F4F2EC" opacity="0.7" material="shader: flat"></a-plane>
 
           <a-text
-            value="Obra 02\n\nAqui puedes incluir la informacion principal de esta pieza: descripcion, autora, materiales, concepto o contexto de la escultura."
+            value="Ajolotla, la flor del agua\n\nAjolotla seria una guardiana del agua: un ente silencioso que conserva los recuerdos de aquello que desaparece bajo el agua, las raices y el lodo. Su cuerpo parece estar cubierto por una vestimenta viva, formada por petalos, branquias y membranas organicas, como si la naturaleza hubiera terminado de construir aquello que en ella permanecia incompleto
+            
+            - Anahi Serna -"
             align="center" color="#222222" width="2.1" position="0 0.05 0.01">
           </a-text>
 
